@@ -1,0 +1,22 @@
+{
+  "extends": "eslint-config-airbnb",
+  "plugins": [
+    "react"
+  ],
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "mocha": true
+  },
+  "rules": {
+    "semi": [2, "always"],
+    "quotes": [2, "single"],
+    "indent": [2, 2],
+    "linebreak-style": [2, "unix"],
+    "no-console": [0],
+    "no-unused-expressions": [0],
+    "block-scoped-var": [0],
+    "react/prop-types": [0]
+  }
+}

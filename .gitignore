@@ -1,0 +1,9 @@
+bower_components/
+node_modules/
+dist/*
+!dist/.gitkeep
+tmp/
+.sass-cache/
+*.DS_Store
+*.log
+*.swp

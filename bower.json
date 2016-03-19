@@ -1,0 +1,18 @@
+{
+  "name": "kakushika-web",
+  "homepage": "https://github.com/Kakushika/kakushika-web",
+  "authors": [
+    "Orleika <orleika.net@gmail.com>"
+  ],
+  "description": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "^1.1.3"
+  }
+}
