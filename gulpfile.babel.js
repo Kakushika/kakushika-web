@@ -6,6 +6,8 @@ import runSequence from 'run-sequence';
 import gulp from 'gulp';
 import mainBowerFiles from 'main-bower-files';
 import gulpLoadPlugins from 'gulp-load-plugins';
+import imageminJpegtran from 'imagemin-jpegtran';
+import imageminOptipng from 'imagemin-optipng';
 
 const $ = gulpLoadPlugins();
 
@@ -14,6 +16,18 @@ gulp.task('clean', () => del(['dist/**/*.html', 'dist/**/*.css', 'dist/**/**.js'
 gulp.task('lib', () => {
   return gulp.src(mainBowerFiles())
     .pipe(gulp.dest('dist/lib'));
+});
+
+gulp.task('img:jpg', () => {
+  return gulp.src('src/images/*.(jpg|jpeg)')
+    .pipe(imageminJpegtran()())
+    .pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('img:png', () => {
+  return gulp.src('src/images/*.png')
+    .pipe(imageminOptipng()())
+    .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('style', () => {
@@ -75,7 +89,7 @@ gulp.task('watch', () => {
 
 gulp.task('default', ['clean'], cb => {
   runSequence(
-    ['deploy-lib', 'style', 'script', 'markup'],
+    ['lib', 'img:jpg', 'img:png', 'style', 'script', 'markup'],
     ['minify-html'],
     cb
   );
