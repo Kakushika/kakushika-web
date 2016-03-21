@@ -13,6 +13,6 @@ deployment:
     branch: master
     commands:
       - ./node_modules/.bin/bower install
-      - ./node_modules/.bin/gulp
       - git clone ${DEPLOY_TARGET_REPOSITORY} dist
+      - ./node_modules/.bin/gulp
       - ./deploy.sh
