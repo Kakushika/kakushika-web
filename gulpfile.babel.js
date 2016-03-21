@@ -11,7 +11,7 @@ const $ = gulpLoadPlugins();
 
 gulp.task('clean', () => del(['dist/**/*.html', 'dist/**/*.css', 'dist/**/**.js', 'tmp/*.html']));
 
-gulp.task('deploy-lib', () => {
+gulp.task('lib', () => {
   return gulp.src(mainBowerFiles())
     .pipe(gulp.dest('dist/lib'));
 });
@@ -26,7 +26,7 @@ gulp.task('style', () => {
       comments: false,
       css: 'dist/css',
       sass: 'src/sass',
-      image: 'dist/img',
+      image: 'src/images',
     }))
     .pipe($.autoprefixer())
     .pipe($.minifyCss())
